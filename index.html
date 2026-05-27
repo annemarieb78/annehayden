@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anne Hayden | Fractional Executive Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Argue';
+            src: url('assets/fonts/ArgueDEMO.eot');
+            src: url('assets/fonts/ArgueDEMO.eot?#iefix') format('embedded-opentype'),
+                 url('assets/fonts/ArgueDEMO.woff') format('woff'),
+                 url('assets/fonts/ArgueDEMO.svg#Argue') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* ============================================================
+           ANNE HAYDEN LLC — Brand Colors
+           Navy:  #001672
+           Cream: #fffdf5
+           Fonts: Argue (display) | Quicksand
+           ============================================================ */
+
+        :root {
+            --navy:       #001672;
+            --navy-mid:   #1a2f8a;
+            --cream:      #fffdf5;
+            --cream-dark: #f0ece0;
+            --gold:       #b8975a;
+            --text-body:  #1a1f3c;
+            --text-muted: #4a5280;
+        }
+
+        /* ——— RESET ——— */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: var(--cream);
+            color: var(--text-body);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ——— NAV ——— */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: rgba(255, 253, 245, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 22, 114, 0.08);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 3rem;
+        }
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--navy);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0.7;
+            transition: opacity 0.25s;
+        }
+
+        .nav-links a:hover { opacity: 1; }
+
+        .nav-cta {
+            display: inline-block;
+            padding: 0.55rem 1.4rem;
+            background: var(--navy);
+            color: var(--cream) !important;
+            border-radius: 2px;
+            opacity: 1 !important;
+        }
+
+        .nav-cta:hover { background: var(--navy-mid); }
+
+        /* ——— HERO ——— */
+        .hero {
+            min-height: 100vh;
+            background: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 7rem 2rem 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle radial glow */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 15% 60%, rgba(26,47,138,0.55) 0%, transparent 100%),
+                radial-gradient(ellipse 40% 40% at 85% 20%, rgba(184,151,90,0.06) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            position: relative;
+            max-width: 680px;
+        }
+
+        .hero-logo {
+            width: 160px;
+            height: auto;
+            display: block;
+            margin: 0 auto 2.5rem;
+            /* Invert navy logo to cream/white on dark background */
+            filter: brightness(0) saturate(100%) invert(98%) sepia(10%) saturate(200%) hue-rotate(330deg);
+        }
+
+        .hero-eyebrow {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: rgba(255, 253, 245, 0.45);
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-headline {
+            font-family: 'Argue', 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.65rem, 3.5vw, 2.5rem);
+            font-weight: 400;
+            font-style: italic;
+            color: var(--cream);
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-sub {
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: rgba(255, 253, 245, 0.55);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 0.9rem 2.75rem;
+            border: 1.5px solid rgba(255, 253, 245, 0.4);
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            border-radius: 2px;
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: rgba(255, 253, 245, 0.1);
+            border-color: rgba(255, 253, 245, 0.75);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0.3;
+            animation: breathe 2.5s ease-in-out infinite;
+        }
+
+        .hero-scroll span {
+            font-size: 0.62rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--cream);
+        }
+
+        .hero-scroll-line {
+            width: 1px;
+            height: 36px;
+            background: var(--cream);
+        }
+
+        @keyframes breathe {
+            0%, 100% { opacity: 0.3; transform: translateX(-50%) translateY(0); }
+            50% { opacity: 0.6; transform: translateX(-50%) translateY(4px); }
+        }
+
+        /* ——— SECTION SHARED ——— */
+        section { padding: 7rem 2rem; }
+
+        .container { max-width: 920px; margin: 0 auto; }
+        .container-sm { max-width: 660px; margin: 0 auto; }
+
+        .eyebrow {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.85rem;
+        }
+
+        h2.section-title {
+            font-family: 'Argue', 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 400;
+            color: var(--navy);
+            line-height: 1.25;
+            margin-bottom: 2.5rem;
+        }
+
+        /* ——— ABOUT ——— */
+        .about { background: var(--cream); }
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .about-sidebar {
+            border-top: 2px solid var(--navy);
+            padding-top: 1.5rem;
+        }
+
+        .sidebar-group { margin-bottom: 2rem; }
+
+        .sidebar-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.65rem;
+        }
+
+        .sidebar-list {
+            list-style: none;
+        }
+
+        .sidebar-list li {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--navy);
+            padding: 0.3rem 0;
+            border-bottom: 1px solid rgba(0, 22, 114, 0.07);
+        }
+
+        .about-body h2 { margin-bottom: 1.75rem; }
+
+        .about-body p {
+            font-size: 1.025rem;
+            color: var(--text-body);
+            line-height: 1.9;
+            margin-bottom: 1.35rem;
+            font-weight: 400;
+        }
+
+        .about-body p:last-child { margin-bottom: 0; }
+
+        /* ——— SERVICES ——— */
+        .services { background: var(--navy); }
+
+        .services h2.section-title { color: var(--cream); }
+
+        .services .eyebrow { color: rgba(184, 151, 90, 0.8); }
+
+        .services-intro {
+            font-size: 0.95rem;
+            color: rgba(255, 253, 245, 0.5);
+            font-style: italic;
+            margin-top: -1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .service-card {
+            border: 1px solid rgba(255, 253, 245, 0.12);
+            border-radius: 3px;
+            padding: 2rem 1.75rem;
+            transition: border-color 0.3s, background 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: rgba(255, 253, 245, 0.3);
+            background: rgba(255, 253, 245, 0.03);
+        }
+
+        .card-num {
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-family: 'Argue', 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--cream);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .service-card p {
+            font-size: 0.85rem;
+            color: rgba(255, 253, 245, 0.4);
+            line-height: 1.65;
+            font-style: italic;
+        }
+
+        .services-note {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 253, 245, 0.08);
+            text-align: center;
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255, 253, 245, 0.22);
+        }
+
+        /* ——— ENGAGEMENT / PRICING ——— */
+        .engagement { background: var(--cream-dark); }
+
+        .engagement-box {
+            border: 2px dashed rgba(0, 22, 114, 0.18);
+            border-radius: 6px;
+            padding: 5rem 2.5rem;
+            text-align: center;
+            background: rgba(255, 253, 245, 0.5);
+        }
+
+        .engagement-box h3 {
+            font-family: 'Argue', 'Playfair Display', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .engagement-box p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        /* ——— CONTACT ——— */
+        .contact {
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .contact h2.section-title { margin-bottom: 1rem; }
+
+        .contact-body {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.85;
+            margin-bottom: 2.75rem;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 1rem 3.25rem;
+            background: var(--navy);
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            border-radius: 2px;
+            transition: background 0.3s;
+        }
+
+        .contact-btn:hover { background: var(--navy-mid); }
+
+        /* ——— FOOTER ——— */
+        footer {
+            background: var(--navy);
+            color: rgba(255, 253, 245, 0.35);
+            padding: 2.25rem 2rem;
+            text-align: center;
+            font-size: 0.75rem;
+            letter-spacing: 0.06em;
+        }
+
+        footer a {
+            color: rgba(255, 253, 245, 0.5);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover { color: rgba(255, 253, 245, 0.8); }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        .footer-logo img {
+            height: 28px;
+            width: auto;
+            filter: brightness(0) saturate(100%) invert(98%) sepia(10%) saturate(200%) hue-rotate(330deg);
+            opacity: 0.4;
+        }
+
+        /* ——— RESPONSIVE ——— */
+        @media (max-width: 680px) {
+            nav { padding: 0.85rem 1.25rem; }
+            .nav-links { display: none; }
+
+            .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+            .about-sidebar { border-top: none; border-left: 3px solid var(--navy); padding-top: 0; padding-left: 1rem; }
+
+            .services-grid { grid-template-columns: 1fr; }
+
+            .footer-inner { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ====== NAV ====== -->
+<nav>
+    <a href="#home" class="nav-logo">
+        <img src="assets/anne-hayden-v2.svg" alt="Anne Hayden LLC">
+    </a>
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#engagement">Engagement</a></li>
+        <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+    </ul>
+</nav>
+
+<!-- ====== HERO ====== -->
+<section class="hero" id="home">
+    <div class="hero-inner">
+        <img src="assets/anne-hayden-v2.svg" alt="Anne Hayden LLC" class="hero-logo">
+        <p class="hero-eyebrow">Fractional Executive Assistant</p>
+        <h1 class="hero-headline">Quiet power behind high-performance leaders.</h1>
+        <p class="hero-sub">8+ years embedded at the C-suite level across finance, tech, PR, and nonprofit — available fractionally for principals who demand the real thing.</p>
+        <a href="#contact" class="hero-btn">Let's Talk</a>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="hero-scroll-line"></div>
+    </div>
+</section>
+
+<!-- ====== ABOUT ====== -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-layout">
+
+            <!-- Sidebar -->
+            <aside class="about-sidebar">
+                <div class="sidebar-group">
+                    <p class="sidebar-label">Industries</p>
+                    <ul class="sidebar-list">
+                        <li>Financial Services</li>
+                        <li>Technology</li>
+                        <li>Public Relations</li>
+                        <li>Nonprofit</li>
+                    </ul>
+                </div>
+                <div class="sidebar-group">
+                    <p class="sidebar-label">Principals Supported</p>
+                    <ul class="sidebar-list">
+                        <li>C-Suite Executives</li>
+                        <li>Managing Directors</li>
+                        <li>Founders</li>
+                        <li>Scaling Entrepreneurs</li>
+                    </ul>
+                </div>
+                <div class="sidebar-group">
+                    <p class="sidebar-label">Reach</p>
+                    <ul class="sidebar-list">
+                        <li>Dual US / EU Citizen</li>
+                        <li>Multi-timezone</li>
+                        <li>Multi-geography</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Body -->
+            <div class="about-body">
+                <p class="eyebrow">About</p>
+                <h2 class="section-title">An operational partner who speaks executive.</h2>
+                <p>Fractional EA with 8+ years supporting C-suite executives, Managing Directors, and founders across financial services, tech, PR, and nonprofit environments. Currently embedded across two concurrent client engagements, providing dedicated C-suite support.</p>
+                <p>Equally at home supporting an investment banker, a startup founder, or an entrepreneur scaling their business. Known for sound judgment, deep discretion, and the ability to function as a true operational partner to high-performance principals who have no time for hand-holding.</p>
+                <p>Dual US/EU citizen with a track record of managing complexity across time zones, organizations, and geographies.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ====== SERVICES ====== -->
+<section class="services" id="services">
+    <div class="container">
+        <p class="eyebrow">Services</p>
+        <h2 class="section-title">Where I add value.</h2>
+        <p class="services-intro">Full service details and pricing coming soon. The below reflects the core areas I support.</p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <p class="card-num">01</p>
+                <h3>Calendar &amp; Schedule Management</h3>
+                <p>Details coming soon.</p>
+            </div>
+            <div class="service-card">
+                <p class="card-num">02</p>
+                <h3>Communications &amp; Correspondence</h3>
+                <p>Details coming soon.</p>
+            </div>
+            <div class="service-card">
+                <p class="card-num">03</p>
+                <h3>Travel &amp; Logistics</h3>
+                <p>Details coming soon.</p>
+            </div>
+            <div class="service-card">
+                <p class="card-num">04</p>
+                <h3>Operational Support</h3>
+                <p>Details coming soon.</p>
+            </div>
+            <div class="service-card">
+                <p class="card-num">05</p>
+                <h3>Cross-Functional Coordination</h3>
+                <p>Details coming soon.</p>
+            </div>
+            <div class="service-card">
+                <p class="card-num">06</p>
+                <h3>Board &amp; Investor Materials</h3>
+                <p>Details coming soon.</p>
+            </div>
+        </div>
+
+        <p class="services-note">Full service details &amp; pricing coming soon</p>
+    </div>
+</section>
+
+<!-- ====== ENGAGEMENT / PRICING ====== -->
+<section class="engagement" id="engagement">
+    <div class="container">
+        <p class="eyebrow">Engagement</p>
+        <h2 class="section-title">Working together.</h2>
+        <div class="engagement-box">
+            <h3>Pricing &amp; Engagement Models</h3>
+            <p>Retainer structures, hourly options, and project-based engagements —<br>details coming soon. Reach out directly to discuss your needs.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ====== CONTACT ====== -->
+<section class="contact" id="contact">
+    <div class="container-sm">
+        <p class="eyebrow">Contact</p>
+        <h2 class="section-title">Let's talk.</h2>
+        <p class="contact-body">If you're a principal who values discretion, precision, and a true operational partner, I'd welcome the conversation. I'm available for select new engagements.</p>
+        <a href="mailto:annemariehayden@gmail.com" class="contact-btn">Send a Message</a>
+    </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+    <div class="footer-inner">
+        <a href="#home" class="footer-logo">
+            <img src="assets/anne-hayden-v2.svg" alt="Anne Hayden LLC">
+        </a>
+        <span>&copy; 2026 Anne Hayden LLC</span>
+        <a href="mailto:annemariehayden@gmail.com">annemariehayden@gmail.com</a>
+    </div>
+</footer>
+
+</body>
+</html>

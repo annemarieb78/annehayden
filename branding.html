@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anne Hayden LLC — Brand Style Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Argue';
+            src: url('assets/fonts/ArgueDEMO.eot');
+            src: url('assets/fonts/ArgueDEMO.eot?#iefix') format('embedded-opentype'),
+                 url('assets/fonts/ArgueDEMO.woff') format('woff'),
+                 url('assets/fonts/ArgueDEMO.svg#Argue') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        :root {
+            --navy:       #001672;
+            --navy-mid:   #1a2f8a;
+            --cream:      #fffdf5;
+            --cream-dark: #f0ece0;
+            --gold:       #b8975a;
+            --text-body:  #1a1f3c;
+            --text-muted: #4a5280;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: #f7f4ec;
+            color: var(--text-body);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ——— LAYOUT ——— */
+        .page-header {
+            background: var(--navy);
+            padding: 4rem 3rem 3rem;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+
+        .page-header-text h1 {
+            font-family: 'Argue', 'Playfair Display', serif;
+            font-size: 2.25rem;
+            font-weight: 400;
+            color: var(--cream);
+            margin-bottom: 0.4rem;
+        }
+
+        .page-header-text p {
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255, 253, 245, 0.4);
+        }
+
+        .page-header img {
+            height: 60px;
+            filter: brightness(0) saturate(100%) invert(98%) sepia(10%) saturate(200%) hue-rotate(330deg);
+            opacity: 0.7;
+        }
+
+        main {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        /* ——— SECTION ——— */
+        .guide-section {}
+
+        .guide-section-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .guide-section h2 {
+            font-family: 'Argue', 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: var(--navy);
+            margin-bottom: 0.6rem;
+            border-bottom: 1px solid rgba(0,22,114,0.12);
+            padding-bottom: 0.75rem;
+        }
+
+        .guide-section-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        /* ——— COLOR PALETTE ——— */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .color-swatch {
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .swatch-block {
+            height: 110px;
+            position: relative;
+        }
+
+        .swatch-block.border {
+            border: 2px solid rgba(0,22,114,0.15);
+        }
+
+        .swatch-info {
+            background: white;
+            padding: 1rem;
+        }
+
+        .swatch-name {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--text-body);
+            margin-bottom: 0.2rem;
+        }
+
+        .swatch-hex {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .swatch-use {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ——— TYPOGRAPHY ——— */
+        .type-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .type-row {
+            background: white;
+            border-radius: 4px;
+            padding: 2rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .type-meta { border-top: 2px solid var(--navy); padding-top: 0.75rem; }
+
+        .type-meta-name {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.3rem;
+        }
+
+        .type-meta-detail {
+            font-size: 0.78rem;
+            color: var(--navy);
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+        }
+
+        .type-meta-use {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .type-sample {}
+
+        .sample-display {
+            font-family: 'Argue', 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .sample-display-italic {
+            font-family: 'Argue', 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--navy);
+            opacity: 0.75;
+        }
+
+        .sample-body {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            color: var(--text-body);
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .sample-caps {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .sample-dream {
+            font-family: 'Argue', 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--navy);
+            line-height: 1.1;
+        }
+
+        .font-note {
+            display: inline-block;
+            margin-top: 0.75rem;
+            font-size: 0.7rem;
+            background: rgba(184,151,90,0.12);
+            color: var(--gold);
+            border: 1px solid rgba(184,151,90,0.3);
+            border-radius: 3px;
+            padding: 0.3rem 0.65rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* ——— LOGO USAGE ——— */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .logo-block {
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        }
+
+        .logo-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2.5rem 2rem;
+            min-height: 160px;
+        }
+
+        .logo-display img { height: 90px; width: auto; }
+
+        .logo-display.on-cream { background: var(--cream); }
+        .logo-display.on-navy  { background: var(--navy); }
+        .logo-display.on-white { background: #ffffff; }
+
+        .logo-display.on-navy img {
+            filter: brightness(0) saturate(100%) invert(98%) sepia(10%) saturate(200%) hue-rotate(330deg);
+        }
+
+        .logo-caption {
+            background: white;
+            padding: 0.85rem 1rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .logo-caption strong {
+            display: block;
+            font-weight: 700;
+            color: var(--text-body);
+            margin-bottom: 0.15rem;
+        }
+
+        /* ——— TONE ——— */
+        .tone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .tone-card {
+            background: white;
+            border-radius: 4px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border-top: 3px solid var(--navy);
+        }
+
+        .tone-card h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .tone-card p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        .tone-card.avoid { border-top-color: #c0392b; }
+        .tone-card.avoid h4 { color: #c0392b; }
+
+        /* ——— SPACING ——— */
+        .spacing-row {
+            background: white;
+            border-radius: 4px;
+            padding: 1.75rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .spacing-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .spacing-bar {
+            background: var(--navy);
+            border-radius: 2px;
+            height: 8px;
+            opacity: 0.25;
+            flex-shrink: 0;
+        }
+
+        .spacing-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .spacing-label strong {
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        /* ——— QUICK REF ——— */
+        .quick-ref {
+            background: var(--navy);
+            border-radius: 6px;
+            padding: 2.5rem 2.5rem;
+            color: var(--cream);
+        }
+
+        .quick-ref h2 {
+            font-family: 'Argue', 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 1.4rem;
+            margin-bottom: 1.75rem;
+            color: var(--cream);
+            border-bottom-color: rgba(255,253,245,0.15);
+        }
+
+        .qr-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .qr-group h4 {
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .qr-group ul {
+            list-style: none;
+        }
+
+        .qr-group li {
+            font-size: 0.85rem;
+            color: rgba(255,253,245,0.7);
+            padding: 0.3rem 0;
+            border-bottom: 1px solid rgba(255,253,245,0.06);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .qr-group li span {
+            font-family: 'Courier New', monospace;
+            color: rgba(255,253,245,0.45);
+            font-size: 0.78rem;
+        }
+
+        @media (max-width: 620px) {
+            .type-row { grid-template-columns: 1fr; }
+            .qr-grid { grid-template-columns: 1fr; }
+            .page-header { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+    <div class="page-header-text">
+        <h1>Brand Style Guide</h1>
+        <p>Anne Hayden LLC &nbsp;·&nbsp; Version 1.0 &nbsp;·&nbsp; 2026</p>
+    </div>
+    <img src="assets/anne-hayden-v2.svg" alt="Anne Hayden LLC">
+</header>
+
+<main>
+
+    <!-- ====== COLOR PALETTE ====== -->
+    <section class="guide-section">
+        <p class="guide-section-label">01</p>
+        <h2>Color Palette</h2>
+        <p class="guide-section-desc">The palette is intentionally restrained — two primary brand colors kept at full strength, anchored by a warm gold accent. Avoid adding colors outside this system without good reason.</p>
+
+        <div class="color-grid">
+            <div class="color-swatch">
+                <div class="swatch-block" style="background: #001672;"></div>
+                <div class="swatch-info">
+                    <p class="swatch-name">Navy — Primary</p>
+                    <p class="swatch-hex">#001672</p>
+                    <p class="swatch-use">Backgrounds, headings, buttons, borders, footer</p>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="swatch-block border" style="background: #fffdf5;"></div>
+                <div class="swatch-info">
+                    <p class="swatch-name">Warm Cream — Background</p>
+                    <p class="swatch-hex">#fffdf5</p>
+                    <p class="swatch-use">Page background, text on dark, nav background</p>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="swatch-block" style="background: #f0ece0;"></div>
+                <div class="swatch-info">
+                    <p class="swatch-name">Cream Dark — Section Alt</p>
+                    <p class="swatch-hex">#f0ece0</p>
+                    <p class="swatch-use">Alternate section backgrounds, subtle contrast</p>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="swatch-block" style="background: #b8975a;"></div>
+                <div class="swatch-info">
+                    <p class="swatch-name">Gold — Accent</p>
+                    <p class="swatch-hex">#b8975a</p>
+                    <p class="swatch-use">Eyebrows, labels, card numbers, highlights only — use sparingly</p>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="swatch-block" style="background: #1a1f3c;"></div>
+                <div class="swatch-info">
+                    <p class="swatch-name">Deep Navy — Body Text</p>
+                    <p class="swatch-hex">#1a1f3c</p>
+                    <p class="swatch-use">Body copy on light backgrounds</p>
+                </div>
+            </div>
+            <div class="color-swatch">
+                <div class="swatch-block" style="background: #4a5280;"></div>
+                <div class="swatch-info">
+                    <p class="swatch-name">Mid Navy — Supporting Text</p>
+                    <p class="swatch-hex">#4a5280</p>
+                    <p class="swatch-use">Subheadings, captions, secondary copy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== TYPOGRAPHY ====== -->
+    <section class="guide-section">
+        <p class="guide-section-label">02</p>
+        <h2>Typography</h2>
+        <p class="guide-section-desc">Three typefaces define the brand. Dream Avenue is the signature display font — used only for large initials and hero moments. Playfair Display serves as the editorial heading font. Quicksand is the workhorse for all body, UI, and label copy.</p>
+
+        <div class="type-stack">
+
+            <!-- Dream Avenue -->
+            <div class="type-row">
+                <div class="type-meta">
+                    <p class="type-meta-name">Display Font</p>
+                    <p class="type-meta-detail">Dream Avenue</p>
+                    <p class="type-meta-use">Large initials, logo mark, statement hero moments. This is a custom/licensed font — self-host the file and add via @font-face in your CSS.</p>
+                    <span class="font-note">Self-hosted — add font file to /assets/fonts/</span>
+                </div>
+                <div class="type-sample">
+                    <div class="sample-dream">AH</div>
+                    <p style="font-size:0.75rem; color: var(--text-muted); margin-top:0.5rem;">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
+                </div>
+            </div>
+
+            <!-- Playfair Display -->
+            <div class="type-row">
+                <div class="type-meta">
+                    <p class="type-meta-name">Editorial Heading</p>
+                    <p class="type-meta-detail">Playfair Display<br>Google Fonts</p>
+                    <p class="type-meta-use">Section titles, card headings, pull quotes. Weight 400 regular and italic. Use the italic for warmth and personality.</p>
+                </div>
+                <div class="type-sample">
+                    <div class="sample-display">An operational partner who speaks executive.</div>
+                    <div class="sample-display-italic">Quiet power behind high-performance leaders.</div>
+                </div>
+            </div>
+
+            <!-- Quicksand -->
+            <div class="type-row">
+                <div class="type-meta">
+                    <p class="type-meta-name">Body & UI Font</p>
+                    <p class="type-meta-detail">Quicksand<br>Google Fonts</p>
+                    <p class="type-meta-use">All body text, navigation, buttons, labels, captions. Weights 400 (body), 500 (UI), 600 (nav/buttons), 700 (labels/eyebrows).</p>
+                </div>
+                <div class="type-sample">
+                    <div class="sample-body">Fractional EA with 8+ years supporting C-suite executives, Managing Directors, and founders. Known for sound judgment and deep discretion.</div>
+                    <div class="sample-caps">About &nbsp;·&nbsp; Services &nbsp;·&nbsp; Engagement &nbsp;·&nbsp; Contact</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ====== LOGO USAGE ====== -->
+    <section class="guide-section">
+        <p class="guide-section-label">03</p>
+        <h2>Logo Usage</h2>
+        <p class="guide-section-desc">The logo is always used at its native navy color or inverted to cream on dark backgrounds. Never recolor, stretch, or place on a busy background.</p>
+
+        <div class="logo-grid">
+            <div class="logo-block">
+                <div class="logo-display on-cream">
+                    <img src="assets/anne-hayden-v2.svg" alt="">
+                </div>
+                <div class="logo-caption">
+                    <strong>✓ On Cream Background</strong>
+                    Preferred — navy logo on warm cream
+                </div>
+            </div>
+            <div class="logo-block">
+                <div class="logo-display on-white">
+                    <img src="assets/anne-hayden-v2.svg" alt="">
+                </div>
+                <div class="logo-caption">
+                    <strong>✓ On White Background</strong>
+                    Acceptable for print or document use
+                </div>
+            </div>
+            <div class="logo-block">
+                <div class="logo-display on-navy">
+                    <img src="assets/anne-hayden-v2.svg" alt="">
+                </div>
+                <div class="logo-caption">
+                    <strong>✓ On Navy Background</strong>
+                    Invert to cream/white using CSS filter or export a white version
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 1.5rem; background: white; border-radius: 4px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+            <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8;">
+                <strong style="color: var(--text-body);">Clear Space:</strong> Always maintain a clear space around the logo equal to the height of the "AH" letterforms.<br>
+                <strong style="color: var(--text-body);">Minimum Size:</strong> Never display the logo smaller than 32px tall on screen or 0.4" in print.<br>
+                <strong style="color: var(--text-body);">Don't:</strong> Rotate, recolor, add drop shadows, place on patterned or busy backgrounds, or use the AH initials without the full name lockup (except in favicon/icon contexts).
+            </p>
+        </div>
+    </section>
+
+    <!-- ====== TONE OF VOICE ====== -->
+    <section class="guide-section">
+        <p class="guide-section-label">04</p>
+        <h2>Tone of Voice</h2>
+        <p class="guide-section-desc">Copy should feel like the person who wrote it — confident, precise, and warm without being effusive. The brand voice mirrors the qualities of a great EA: calm authority, no fluff, genuine care.</p>
+
+        <div class="tone-grid">
+            <div class="tone-card">
+                <h4>Confident</h4>
+                <p>State things directly. Avoid hedging language like "I try to" or "I hope to." You know what you bring.</p>
+            </div>
+            <div class="tone-card">
+                <h4>Discreet</h4>
+                <p>Professional and measured. Nothing showy. The work speaks; the brand doesn't need to shout.</p>
+            </div>
+            <div class="tone-card">
+                <h4>Warm</h4>
+                <p>Human, not corporate. Short sentences with personality. Approachable without being casual.</p>
+            </div>
+            <div class="tone-card">
+                <h4>Precise</h4>
+                <p>Every word earns its place. No filler phrases, no padding. Be specific where it counts.</p>
+            </div>
+            <div class="tone-card avoid">
+                <h4>Avoid: Overpromising</h4>
+                <p>"I'll handle everything!" — too salesy. Speak to judgment and partnership, not task completion.</p>
+            </div>
+            <div class="tone-card avoid">
+                <h4>Avoid: Jargon</h4>
+                <p>Skip buzzwords like "synergy," "bandwidth," or "value-add." Write the way a smart person talks.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== QUICK REFERENCE ====== -->
+    <section class="guide-section">
+        <p class="guide-section-label">05</p>
+        <h2>Quick Reference</h2>
+        <p class="guide-section-desc">Everything you need at a glance for the designer, developer, or anyone creating brand materials.</p>
+
+        <div class="quick-ref">
+            <div class="qr-grid">
+                <div class="qr-group">
+                    <h4>Colors</h4>
+                    <ul>
+                        <li>Navy — Primary <span>#001672</span></li>
+                        <li>Warm Cream <span>#fffdf5</span></li>
+                        <li>Cream Dark <span>#f0ece0</span></li>
+                        <li>Gold — Accent <span>#b8975a</span></li>
+                        <li>Body Text <span>#1a1f3c</span></li>
+                        <li>Muted Text <span>#4a5280</span></li>
+                    </ul>
+                </div>
+                <div class="qr-group">
+                    <h4>Fonts</h4>
+                    <ul>
+                        <li>Display — Dream Avenue <span>self-hosted</span></li>
+                        <li>Headings — Playfair Display <span>Google Fonts</span></li>
+                        <li>Body — Quicksand <span>Google Fonts</span></li>
+                        <li>Label weight <span>700 / 0.25em track</span></li>
+                        <li>Body weight <span>400–500</span></li>
+                        <li>Button weight <span>600–700</span></li>
+                    </ul>
+                </div>
+                <div class="qr-group">
+                    <h4>Logo File</h4>
+                    <ul>
+                        <li>Format <span>SVG (vector)</span></li>
+                        <li>Logo color <span>#001672</span></li>
+                        <li>Background <span>Transparent</span></li>
+                        <li>On dark use <span>CSS invert filter</span></li>
+                        <li>Min height screen <span>32px</span></li>
+                        <li>Min height print <span>0.4 in</span></li>
+                    </ul>
+                </div>
+                <div class="qr-group">
+                    <h4>Web Fonts Import</h4>
+                    <ul>
+                        <li style="display:block; padding: 0.5rem 0; border: none;">
+                            <code style="font-size:0.72rem; color: rgba(255,253,245,0.5); line-height: 1.8; font-family: 'Courier New', monospace;">
+                                @import url('https://fonts.googleapis.com/<br>
+                                css2?family=Quicksand:wght@300;400;<br>
+                                500;600;700&family=Playfair+Display:<br>
+                                ital,wght@0,400;0,600;1,400');
+                            </code>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>
