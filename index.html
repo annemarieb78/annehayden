@@ -63,7 +63,7 @@
         }
 
         .nav-logo img {
-            height: 40px;
+            height: 58px;
             width: auto;
             display: block;
         }
@@ -460,10 +460,62 @@
             opacity: 0.4;
         }
 
+        /* ——— HAMBURGER ——— */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
         /* ——— RESPONSIVE ——— */
         @media (max-width: 680px) {
-            nav { padding: 0.85rem 1.25rem; }
-            .nav-links { display: none; }
+            nav {
+                padding: 0.85rem 1.25rem;
+                flex-wrap: wrap;
+            }
+
+            .hamburger { display: flex; }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                padding: 1rem 0 0.5rem;
+                gap: 0;
+            }
+
+            .nav-links.open { display: flex; }
+
+            .nav-links li { border-top: 1px solid rgba(0,22,114,0.07); }
+
+            .nav-links a {
+                display: block;
+                padding: 0.75rem 0;
+                font-size: 0.8rem;
+            }
+
+            .nav-cta {
+                background: none;
+                color: var(--navy) !important;
+                padding: 0.75rem 0;
+            }
 
             .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
             .about-sidebar { border-top: none; border-left: 3px solid var(--navy); padding-top: 0; padding-left: 1rem; }
@@ -482,6 +534,9 @@
     <a href="#home" class="nav-logo">
         <img src="assets/anne-hayden-v2.svg" alt="Anne Hayden LLC">
     </a>
+    <button class="hamburger" aria-label="Toggle menu" onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+    </button>
     <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
@@ -631,5 +686,13 @@
     </div>
 </footer>
 
+<script>
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.remove('open');
+            document.querySelector('.hamburger').classList.remove('open');
+        });
+    });
+</script>
 </body>
 </html>
