@@ -102,6 +102,9 @@
         .hero {
             min-height: 100vh;
             background: var(--navy);
+            background-image: url('assets/hero-cityscape.jpg');
+            background-size: cover;
+            background-position: center 60%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -111,14 +114,12 @@
             overflow: hidden;
         }
 
-        /* Subtle radial glow */
+        /* Navy overlay over image */
         .hero::before {
             content: '';
             position: absolute;
             inset: 0;
-            background:
-                radial-gradient(ellipse 60% 50% at 15% 60%, rgba(26,47,138,0.55) 0%, transparent 100%),
-                radial-gradient(ellipse 40% 40% at 85% 20%, rgba(184,151,90,0.06) 0%, transparent 100%);
+            background: rgba(0, 22, 114, 0.65);
             pointer-events: none;
         }
 
@@ -249,6 +250,16 @@
             grid-template-columns: 200px 1fr;
             gap: 5rem;
             align-items: start;
+        }
+
+        .about-photo {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 3px;
+            display: block;
+            margin-bottom: 2rem;
         }
 
         .about-sidebar {
@@ -456,6 +467,7 @@
 
             .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
             .about-sidebar { border-top: none; border-left: 3px solid var(--navy); padding-top: 0; padding-left: 1rem; }
+            .about-photo { aspect-ratio: 4/3; }
 
             .services-grid { grid-template-columns: 1fr; }
 
@@ -500,6 +512,7 @@
 
             <!-- Sidebar -->
             <aside class="about-sidebar">
+                <img src="assets/headshot.jpg" alt="Anne Hayden" class="about-photo">
                 <div class="sidebar-group">
                     <p class="sidebar-label">Industries</p>
                     <ul class="sidebar-list">
