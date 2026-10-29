@@ -370,6 +370,92 @@
             color: rgba(255, 253, 245, 0.22);
         }
 
+        /* ——— TESTIMONIALS ——— */
+        .testimonials { background: var(--cream); }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.75rem;
+        }
+
+        .testimonial {
+            position: relative;
+            background: #fff;
+            border: 1px solid rgba(0, 22, 114, 0.08);
+            border-top: 2px solid var(--gold);
+            border-radius: 3px;
+            padding: 2.5rem 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1.75rem;
+        }
+
+        .testimonial::before {
+            content: '\201C';
+            position: absolute;
+            top: 0.35rem;
+            left: 1.5rem;
+            font-family: 'Argue', 'Playfair Display', Georgia, serif;
+            font-size: 4rem;
+            line-height: 1;
+            color: var(--gold);
+            opacity: 0.35;
+        }
+
+        .testimonial-quote {
+            font-family: 'Argue', 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--navy);
+            line-height: 1.7;
+            padding-top: 1rem;
+        }
+
+        .testimonial-attribution {
+            border-top: 1px solid rgba(0, 22, 114, 0.08);
+            padding-top: 1rem;
+        }
+
+        .testimonial-name {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--navy);
+        }
+
+        .testimonial-role {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.15rem;
+        }
+
+        /* Placeholder shown until real quotes are added */
+        .testimonial-placeholder {
+            grid-column: 1 / -1;
+            border: 2px dashed rgba(0, 22, 114, 0.18);
+            border-radius: 6px;
+            padding: 4rem 2.5rem;
+            text-align: center;
+            background: rgba(255, 253, 245, 0.5);
+        }
+
+        .testimonial-placeholder h3 {
+            font-family: 'Argue', 'Playfair Display', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--navy);
+            margin-bottom: 0.6rem;
+        }
+
+        .testimonial-placeholder p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
         /* ——— ENGAGEMENT / PRICING ——— */
         .engagement { background: var(--cream-dark); }
 
@@ -650,6 +736,41 @@
         </div>
 
         <p class="services-note">Full service details &amp; pricing coming soon</p>
+    </div>
+</section>
+
+<!-- ====== TESTIMONIALS ====== -->
+<section class="testimonials" id="testimonials">
+    <div class="container">
+        <p class="eyebrow">Testimonials</p>
+        <h2 class="section-title">In their words.</h2>
+
+        <div class="testimonials-grid">
+
+            <!--
+                TO ADD A QUOTE: delete the placeholder block below, then copy this
+                template once per testimonial and paste it inside .testimonials-grid.
+                Attribution can be anonymized (e.g. "Managing Director, Financial Services")
+                if the principal prefers discretion. Get written permission first.
+
+                <figure class="testimonial">
+                    <blockquote class="testimonial-quote">
+                        Paste the quote here.
+                    </blockquote>
+                    <figcaption class="testimonial-attribution">
+                        <p class="testimonial-name">Name or Descriptor</p>
+                        <p class="testimonial-role">Title, Company or Industry</p>
+                    </figcaption>
+                </figure>
+            -->
+
+            <!-- Placeholder: remove once real testimonials are added -->
+            <div class="testimonial-placeholder">
+                <h3>Client testimonials</h3>
+                <p>Words from the principals I've supported are coming soon.</p>
+            </div>
+
+        </div>
     </div>
 </section>
 
