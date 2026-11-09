@@ -100,7 +100,7 @@
 
         /* ——— HERO ——— */
         .hero {
-            min-height: 65vh;
+            min-height: 45vh;
             background: var(--navy);
             background-image: url('assets/hero-cityscape.jpg');
             background-size: cover;
@@ -109,7 +109,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 6.5rem 2rem 5rem;
+            padding: 5.5rem 2rem 3.5rem;
             position: relative;
             overflow: hidden;
         }
@@ -129,10 +129,10 @@
         }
 
         .hero-logo {
-            width: 160px;
+            width: 130px;
             height: auto;
             display: block;
-            margin: 0 auto 1.75rem;
+            margin: 0 auto 1.25rem;
             /* Invert navy logo to cream/white on dark background */
             filter: brightness(0) saturate(100%) invert(98%) sepia(10%) saturate(200%) hue-rotate(330deg);
         }
@@ -161,7 +161,7 @@
             font-size: 0.95rem;
             font-weight: 400;
             color: rgba(255, 253, 245, 0.55);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             line-height: 1.7;
             max-width: 480px;
             margin-left: auto;
@@ -188,6 +188,7 @@
         }
 
         .hero-scroll {
+            display: none; /* hidden: hero is short enough that no scroll cue is needed */
             position: absolute;
             bottom: 1.25rem;
             left: 50%;
