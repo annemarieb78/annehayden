@@ -119,13 +119,13 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 22, 114, 0.65);
+            background: rgba(0, 22, 114, 0.72);
             pointer-events: none;
         }
 
         .hero-inner {
             position: relative;
-            max-width: 680px;
+            max-width: 780px;
         }
 
         .hero-logo {
@@ -142,28 +142,30 @@
             font-weight: 700;
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: rgba(255, 253, 245, 0.45);
+            color: rgba(255, 253, 245, 0.75);
             margin-bottom: 1.25rem;
         }
 
         .hero-headline {
             font-family: 'Argue', 'Playfair Display', Georgia, serif;
-            font-size: clamp(1.65rem, 3.5vw, 2.5rem);
+            font-size: clamp(2rem, 4.6vw, 3.4rem);
             font-weight: 400;
             font-style: italic;
             color: var(--cream);
-            line-height: 1.4;
+            line-height: 1.3;
             margin-bottom: 1.5rem;
             letter-spacing: 0.01em;
+            text-wrap: balance;
         }
 
         .hero-sub {
             font-size: 0.95rem;
             font-weight: 400;
-            color: rgba(255, 253, 245, 0.55);
+            color: rgba(255, 253, 245, 0.85);
             margin-bottom: 1.5rem;
             line-height: 1.7;
-            max-width: 480px;
+            max-width: 540px;
+            text-wrap: balance;
             margin-left: auto;
             margin-right: auto;
         }
@@ -247,8 +249,8 @@
 
         .about-layout {
             display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 5rem;
+            grid-template-columns: 280px 1fr;
+            gap: 4rem;
             align-items: start;
         }
 
@@ -292,6 +294,7 @@
         }
 
         .about-body h2 { margin-bottom: 1.75rem; }
+        .about-body p.eyebrow { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.28em; line-height: 1.4; margin-bottom: 0.85rem; color: var(--gold); }
 
         .about-body p {
             font-size: 1.025rem;
@@ -379,6 +382,35 @@
             color: var(--navy);
             margin-bottom: 1.25rem;
         }
+
+        .retainer-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .retainer-cta p {
+            font-family: 'Argue', 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--navy);
+            margin-bottom: 1.25rem;
+        }
+
+        .retainer-btn {
+            display: inline-block;
+            padding: 0.9rem 2.75rem;
+            border: 1.5px solid var(--navy);
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            border-radius: 2px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .retainer-btn:hover { background: var(--navy); color: var(--cream); }
 
         .retainer-price {
             font-family: 'Argue', 'Playfair Display', Georgia, serif;
@@ -546,7 +578,7 @@
     <div class="hero-inner">
         <img src="assets/anne-hayden-v2.svg" alt="Anne Hayden LLC" class="hero-logo">
         <p class="hero-eyebrow">Fractional Executive Assistant</p>
-        <h1 class="hero-headline">Quiet power behind high-performance leaders.</h1>
+        <h1 class="hero-headline">Quiet power behind <span style="white-space:nowrap">high-performance</span> leaders.</h1>
         <p class="hero-sub">8+ years embedded at the C-suite level across finance, tech, PR, and nonprofit — available fractionally for principals who demand the real thing.</p>
         <a href="#contact" class="hero-btn">Let's Talk</a>
     </div>
@@ -643,6 +675,10 @@
                 <h3>One-Half Resource</h3>
                 <p class="retainer-price">$4,400 <span>/ month</span></p>
             </div>
+        </div>
+        <div class="retainer-cta">
+            <p>Not sure which fits? Let's talk it through.</p>
+            <a href="#contact" class="retainer-btn">Start a Conversation</a>
         </div>
     </div>
 </section>
