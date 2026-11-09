@@ -253,6 +253,15 @@
             align-items: start;
         }
 
+        .about-lists {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+            border-top: 2px solid var(--navy);
+            padding-top: 1.75rem;
+        }
+
         .about-photo {
             width: 100%;
             aspect-ratio: 3/4;
@@ -260,15 +269,7 @@
             object-position: center top;
             border-radius: 3px;
             display: block;
-            margin-bottom: 2rem;
         }
-
-        .about-sidebar {
-            border-top: 2px solid var(--navy);
-            padding-top: 1.5rem;
-        }
-
-        .sidebar-group { margin-bottom: 2rem; }
 
         .sidebar-label {
             font-size: 0.62rem;
@@ -513,7 +514,7 @@
 
             .retainer-grid { grid-template-columns: 1fr; }
             .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-            .about-sidebar { border-top: none; border-left: 3px solid var(--navy); padding-top: 0; padding-left: 1rem; }
+            .about-lists { grid-template-columns: 1fr; gap: 1.75rem; margin-top: 2.5rem; }
             .about-photo { aspect-ratio: 4/3; }
 
             .footer-inner { flex-direction: column; gap: 1rem; }
@@ -557,36 +558,8 @@
     <div class="container">
         <div class="about-layout">
 
-            <!-- Sidebar -->
-            <aside class="about-sidebar">
-                <img src="assets/anne-marie-site-photo.jpg" alt="Anne Hayden" class="about-photo">
-                <div class="sidebar-group">
-                    <p class="sidebar-label">Industries</p>
-                    <ul class="sidebar-list">
-                        <li>Financial Services</li>
-                        <li>Technology</li>
-                        <li>Public Relations</li>
-                        <li>Nonprofit</li>
-                    </ul>
-                </div>
-                <div class="sidebar-group">
-                    <p class="sidebar-label">Principals Supported</p>
-                    <ul class="sidebar-list">
-                        <li>C-Suite Executives</li>
-                        <li>Managing Directors</li>
-                        <li>Founders</li>
-                        <li>Scaling Entrepreneurs</li>
-                    </ul>
-                </div>
-                <div class="sidebar-group">
-                    <p class="sidebar-label">Reach</p>
-                    <ul class="sidebar-list">
-                        <li>Dual US / EU Citizen</li>
-                        <li>Multi-timezone</li>
-                        <li>Multi-geography</li>
-                    </ul>
-                </div>
-            </aside>
+            <!-- Photo -->
+            <img src="assets/anne-marie-site-photo.jpg" alt="Anne Hayden" class="about-photo">
 
             <!-- Body -->
             <div class="about-body">
@@ -597,6 +570,36 @@
                 <p>Dual US/EU citizen with a track record of managing complexity across time zones, organizations, and geographies.</p>
             </div>
 
+        </div>
+
+        <!-- At-a-glance lists -->
+        <div class="about-lists">
+            <div class="sidebar-group">
+                <p class="sidebar-label">Industries</p>
+                <ul class="sidebar-list">
+                    <li>Financial Services</li>
+                    <li>Technology</li>
+                    <li>Public Relations</li>
+                    <li>Nonprofit</li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <p class="sidebar-label">Principals Supported</p>
+                <ul class="sidebar-list">
+                    <li>C-Suite Executives</li>
+                    <li>Managing Directors</li>
+                    <li>Founders</li>
+                    <li>Scaling Entrepreneurs</li>
+                </ul>
+            </div>
+            <div class="sidebar-group">
+                <p class="sidebar-label">Reach</p>
+                <ul class="sidebar-list">
+                    <li>Dual US / EU Citizen</li>
+                    <li>Multi-timezone</li>
+                    <li>Multi-geography</li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
