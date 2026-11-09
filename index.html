@@ -306,27 +306,56 @@
         /* ——— ENGAGEMENT / PRICING ——— */
         .engagement { background: var(--cream-dark); }
 
-        .engagement-box {
-            border: 2px dashed rgba(0, 22, 114, 0.18);
-            border-radius: 6px;
-            padding: 5rem 2.5rem;
-            text-align: center;
-            background: rgba(255, 253, 245, 0.5);
+        .retainer-intro {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            max-width: 520px;
+            margin: -1rem 0 2.5rem;
         }
 
-        .engagement-box h3 {
+        .retainer-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .retainer-card {
+            border: 1px solid rgba(0, 22, 114, 0.15);
+            border-radius: 4px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            background: rgba(255, 253, 245, 0.6);
+        }
+
+        .retainer-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .retainer-card h3 {
             font-family: 'Argue', 'Playfair Display', Georgia, serif;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 400;
             color: var(--navy);
-            margin-bottom: 0.75rem;
+            margin-bottom: 1.25rem;
         }
 
-        .engagement-box p {
-            font-size: 0.9rem;
+        .retainer-price {
+            font-family: 'Argue', 'Playfair Display', Georgia, serif;
+            font-size: 2.4rem;
+            color: var(--navy);
+            line-height: 1;
+        }
+
+        .retainer-price span {
+            font-family: inherit;
+            font-size: 0.85rem;
             color: var(--text-muted);
-            font-style: italic;
-            line-height: 1.7;
         }
 
         /* ——— CONTACT ——— */
@@ -450,6 +479,7 @@
                 padding: 0.75rem 0;
             }
 
+            .retainer-grid { grid-template-columns: 1fr; }
             .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
             .about-sidebar { border-top: none; border-left: 3px solid var(--navy); padding-top: 0; padding-left: 1rem; }
             .about-photo { aspect-ratio: 4/3; }
@@ -544,9 +574,18 @@
     <div class="container">
         <p class="eyebrow">Engagement</p>
         <h2 class="section-title">Working together.</h2>
-        <div class="engagement-box">
-            <h3>Pricing &amp; Engagement Models</h3>
-            <p>Retainer structures, hourly options, and project-based engagements —<br>details coming soon. Reach out directly to discuss your needs.</p>
+        <p class="retainer-intro">Monthly retainers, scaled to the level of support your calendar and your business call for.</p>
+        <div class="retainer-grid">
+            <div class="retainer-card">
+                <p class="retainer-label">Retainer</p>
+                <h3>One-Third Resource</h3>
+                <p class="retainer-price">$3,100 <span>/ month</span></p>
+            </div>
+            <div class="retainer-card">
+                <p class="retainer-label">Retainer</p>
+                <h3>One-Half Resource</h3>
+                <p class="retainer-price">$4,200 <span>/ month</span></p>
+            </div>
         </div>
     </div>
 </section>
