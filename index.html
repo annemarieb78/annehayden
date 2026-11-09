@@ -303,74 +303,6 @@
 
         .about-body p:last-child { margin-bottom: 0; }
 
-        /* ——— SERVICES ——— */
-        .services { background: var(--navy); }
-
-        .services h2.section-title { color: var(--cream); }
-
-        .services .eyebrow { color: rgba(184, 151, 90, 0.8); }
-
-        .services-intro {
-            font-size: 0.95rem;
-            color: rgba(255, 253, 245, 0.5);
-            font-style: italic;
-            margin-top: -1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1.25rem;
-        }
-
-        .service-card {
-            border: 1px solid rgba(255, 253, 245, 0.12);
-            border-radius: 3px;
-            padding: 2rem 1.75rem;
-            transition: border-color 0.3s, background 0.3s;
-        }
-
-        .service-card:hover {
-            border-color: rgba(255, 253, 245, 0.3);
-            background: rgba(255, 253, 245, 0.03);
-        }
-
-        .card-num {
-            font-size: 0.6rem;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
-            font-family: 'Argue', 'Playfair Display', Georgia, serif;
-            font-size: 1.1rem;
-            font-weight: 400;
-            color: var(--cream);
-            margin-bottom: 0.75rem;
-            line-height: 1.3;
-        }
-
-        .service-card p {
-            font-size: 0.85rem;
-            color: rgba(255, 253, 245, 0.4);
-            line-height: 1.65;
-            font-style: italic;
-        }
-
-        .services-note {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 253, 245, 0.08);
-            text-align: center;
-            font-size: 0.7rem;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: rgba(255, 253, 245, 0.22);
-        }
-
         /* ——— ENGAGEMENT / PRICING ——— */
         .engagement { background: var(--cream-dark); }
 
@@ -522,8 +454,6 @@
             .about-sidebar { border-top: none; border-left: 3px solid var(--navy); padding-top: 0; padding-left: 1rem; }
             .about-photo { aspect-ratio: 4/3; }
 
-            .services-grid { grid-template-columns: 1fr; }
-
             .footer-inner { flex-direction: column; gap: 1rem; }
         }
     </style>
@@ -540,7 +470,6 @@
     </button>
     <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
         <li><a href="#engagement">Engagement</a></li>
         <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
     </ul>
@@ -607,50 +536,6 @@
             </div>
 
         </div>
-    </div>
-</section>
-
-<!-- ====== SERVICES ====== -->
-<section class="services" id="services">
-    <div class="container">
-        <p class="eyebrow">Services</p>
-        <h2 class="section-title">Where I add value.</h2>
-        <p class="services-intro">Full service details and pricing coming soon. The below reflects the core areas I support.</p>
-
-        <div class="services-grid">
-            <div class="service-card">
-                <p class="card-num">01</p>
-                <h3>Calendar &amp; Schedule Management</h3>
-                <p>Details coming soon.</p>
-            </div>
-            <div class="service-card">
-                <p class="card-num">02</p>
-                <h3>Communications &amp; Correspondence</h3>
-                <p>Details coming soon.</p>
-            </div>
-            <div class="service-card">
-                <p class="card-num">03</p>
-                <h3>Travel &amp; Logistics</h3>
-                <p>Details coming soon.</p>
-            </div>
-            <div class="service-card">
-                <p class="card-num">04</p>
-                <h3>Operational Support</h3>
-                <p>Details coming soon.</p>
-            </div>
-            <div class="service-card">
-                <p class="card-num">05</p>
-                <h3>Cross-Functional Coordination</h3>
-                <p>Details coming soon.</p>
-            </div>
-            <div class="service-card">
-                <p class="card-num">06</p>
-                <h3>Board &amp; Investor Materials</h3>
-                <p>Details coming soon.</p>
-            </div>
-        </div>
-
-        <p class="services-note">Full service details &amp; pricing coming soon</p>
     </div>
 </section>
 
