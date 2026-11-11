@@ -102,16 +102,78 @@
         .hero {
             min-height: 45vh;
             background: var(--navy);
-            background-image: url('assets/hero-cityscape.jpg');
-            background-size: cover;
-            background-position: center 60%;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 5.5rem 2rem 3.5rem;
+            padding: 5rem 2rem 6rem;
             position: relative;
             overflow: hidden;
+        }
+
+        /* Living skyline layers */
+        .hero-bg {
+            position: absolute;
+            inset: -4% 0;
+            background: url('assets/hero-cityscape.jpg') center 60% / cover no-repeat;
+            z-index: 0;
+            will-change: transform;
+            animation: skyline-drift 40s ease-in-out infinite alternate;
+        }
+
+        @keyframes skyline-drift {
+            from { transform: scale(1.0) translateX(0); }
+            to   { transform: scale(1.06) translateX(-1.2%); }
+        }
+
+        .hero-clouds {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .hero-clouds span {
+            position: absolute;
+            width: 55%;
+            height: 38%;
+            border-radius: 50%;
+            background: radial-gradient(closest-side, rgba(255, 253, 245, 0.10), rgba(255, 253, 245, 0));
+            filter: blur(18px);
+            animation: cloud-drift 60s linear infinite;
+        }
+
+        .hero-clouds span:nth-child(1) { top: 2%;  left: -60%; animation-duration: 70s; }
+        .hero-clouds span:nth-child(2) { top: 18%; left: -60%; animation-duration: 95s; animation-delay: -40s; opacity: .8; }
+        .hero-clouds span:nth-child(3) { top: 8%;  left: -60%; animation-duration: 120s; animation-delay: -85s; opacity: .6; }
+
+        @keyframes cloud-drift {
+            from { transform: translateX(0); }
+            to   { transform: translateX(260%); }
+        }
+
+        .hero-lights {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .hero-lights i {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            background: #ffe9b0;
+            box-shadow: 0 0 5px 1px rgba(255, 225, 150, 0.7);
+            opacity: 0;
+            animation: window-twinkle 6s ease-in-out infinite;
+        }
+
+        @keyframes window-twinkle {
+            0%, 100% { opacity: 0; }
+            45%, 60% { opacity: 0.85; }
         }
 
         /* Navy overlay over image */
@@ -121,18 +183,91 @@
             inset: 0;
             background: rgba(0, 22, 114, 0.72);
             pointer-events: none;
+            z-index: 1;
         }
+
+        /* Quiet power scene: chaos resolves into a calm schedule on scroll */
+        .hero-chips {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .chip {
+            position: absolute;
+            left: var(--cx);
+            top: var(--cy);
+            transform: translate(-50%, -50%) rotate(var(--cr));
+            transition: left 1.4s cubic-bezier(.65, 0, .25, 1), top 1.4s cubic-bezier(.65, 0, .25, 1),
+                        transform 1.4s cubic-bezier(.65, 0, .25, 1), opacity 0.9s ease;
+            transition-delay: var(--delay, 0s);
+            opacity: 0.9;
+            white-space: nowrap;
+        }
+
+        .chip span {
+            display: inline-block;
+            padding: 0.4rem 0.85rem;
+            border: 1px solid rgba(255, 253, 245, 0.3);
+            border-radius: 999px;
+            background: rgba(255, 253, 245, 0.1);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            color: rgba(255, 253, 245, 0.9);
+            font-size: 0.66rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            animation: chip-float 5s ease-in-out infinite alternate;
+            animation-delay: var(--float, 0s);
+        }
+
+        .chip span::before {
+            content: '';
+            display: inline-block;
+            width: 0;
+            height: 0.9em;
+            margin-right: 0;
+            vertical-align: -0.12em;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5l3 3 5-6' fill='none' stroke='%23d4b06a' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+            transition: width 0.6s ease 1s, margin 0.6s ease 1s;
+        }
+
+        @keyframes chip-float {
+            from { transform: translateY(-4px); }
+            to   { transform: translateY(5px); }
+        }
+
+        .hero.is-calm .chip {
+            left: var(--ox);
+            top: var(--oy);
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        .hero.is-calm .chip span {
+            animation: none;
+            background: rgba(255, 253, 245, 0.06);
+            border-color: rgba(184, 151, 90, 0.55);
+        }
+
+        .hero.is-calm .chip span::before {
+            width: 0.9em;
+            margin-right: 0.45em;
+        }
+
+        .hero.is-calm .chip.chip-clutter { opacity: 0; }
 
         .hero-inner {
             position: relative;
+            z-index: 3;
             max-width: 780px;
         }
 
         .hero-logo {
-            width: 170px;
+            width: 150px;
             height: auto;
             display: block;
-            margin: 0 auto 1rem;
+            margin: 0 auto 0.75rem;
             /* Invert navy logo to cream/white on dark background */
             filter: brightness(0) saturate(100%) invert(98%) sepia(10%) saturate(200%) hue-rotate(330deg);
         }
@@ -515,6 +650,16 @@
         .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
         /* ——— RESPONSIVE ——— */
+        @media (max-width: 760px) {
+            .hero-chips { display: none; }
+            .hero { padding-bottom: 4rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-bg, .hero-clouds span, .hero-lights i, .chip span { animation: none !important; }
+            .chip { transition: none !important; }
+        }
+
         @media (max-width: 680px) {
             nav {
                 padding: 0.85rem 1.25rem;
@@ -575,6 +720,19 @@
 
 <!-- ====== HERO ====== -->
 <section class="hero" id="home">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-clouds" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="hero-lights" aria-hidden="true"></div>
+    <div class="hero-chips" aria-hidden="true">
+        <div class="chip" style="--cx:9%;--cy:22%;--cr:-6deg;--ox:10%;--oy:92%;--delay:0.00s;--float:-0.0s"><span>Board deck due 9 AM</span></div>
+        <div class="chip" style="--cx:14%;--cy:68%;--cr:5deg;--ox:50%;--oy:92%;--delay:0.08s;--float:-0.7s"><span>Flight rebooked</span></div>
+        <div class="chip" style="--cx:90%;--cy:28%;--cr:7deg;--ox:30%;--oy:92%;--delay:0.16s;--float:-1.4s"><span>Investor call</span></div>
+        <div class="chip" style="--cx:86%;--cy:72%;--cr:-5deg;--ox:70%;--oy:92%;--delay:0.24s;--float:-2.1s"><span>Dinner Thursday?</span></div>
+        <div class="chip" style="--cx:20%;--cy:42%;--cr:-3deg;--ox:90%;--oy:92%;--delay:0.32s;--float:-2.8s"><span>Expense report</span></div>
+        <div class="chip chip-clutter" style="--cx:78%;--cy:46%;--cr:4deg;--ox:50%;--oy:92%;--delay:0.40s;--float:-3.5s"><span>3 meetings clash</span></div>
+        <div class="chip chip-clutter" style="--cx:8%;--cy:86%;--cr:-8deg;--ox:50%;--oy:92%;--delay:0.48s;--float:-4.2s"><span>214 unread</span></div>
+        <div class="chip chip-clutter" style="--cx:93%;--cy:88%;--cr:6deg;--ox:50%;--oy:92%;--delay:0.56s;--float:-4.9s"><span>Re: Fwd: Re: Fwd:</span></div>
+    </div>
     <div class="hero-inner">
         <img src="assets/anne-hayden-v2.svg" alt="Anne Hayden LLC" class="hero-logo">
         <p class="hero-eyebrow">Fractional Executive Assistant</p>
@@ -704,6 +862,41 @@
     </div>
 </footer>
 
+<script>
+(function () {
+    var hero = document.getElementById('home');
+    var bg = hero.querySelector('.hero-bg');
+    var lights = hero.querySelector('.hero-lights');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Window lights: a scatter of tiny warm points over the lower skyline
+    for (var i = 0; i < 46; i++) {
+        var d = document.createElement('i');
+        d.style.left = (4 + Math.random() * 92) + '%';
+        d.style.top = (40 + Math.random() * 40) + '%';
+        d.style.animationDuration = (4 + Math.random() * 7) + 's';
+        d.style.animationDelay = (-Math.random() * 10) + 's';
+        lights.appendChild(d);
+    }
+
+    if (reduce) { hero.classList.add('is-calm'); return; }
+
+    var ticking = false;
+    function update() {
+        var y = window.scrollY || 0;
+        // The quiet-power moment: chaos resolves into a calm schedule once they scroll
+        if (y > 40) hero.classList.add('is-calm');
+        else if (y < 8) hero.classList.remove('is-calm');
+        // Gentle parallax on the skyline
+        if (y < hero.offsetHeight) bg.style.marginTop = (y * 0.12) + 'px';
+        ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+        if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+})();
+</script>
 <script>
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
